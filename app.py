@@ -115,15 +115,15 @@ def main():
     st.markdown("""
         <style>
         .main-header {
-            font-size: 36px;
+            font-size: 30px;
             font-weight: 700;
             margin-bottom: 6px;
         }
         .sub-header {
-            font-size: 20px;
+            font-size: 18px;
             color: #555;
             margin-top: 2px;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
             line-height: 1.2;
         }
         </style>
