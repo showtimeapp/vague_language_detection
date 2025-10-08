@@ -110,11 +110,31 @@ def main():
     """Main application function"""
     
     initialize_session_state()
-    
+
+    # Custom CSS for header styling
+    st.markdown("""
+        <style>
+        .main-header {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .sub-header {
+            font-size: 16px;
+            color: #555;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
     # Header
     st.markdown('<p class="main-header">🔍 Vague Language Detection System</p>', unsafe_allow_html=True)
-    st.markdown('<p class="sub-header">Automatically detect and explain vague language in your documents using AI</p>', unsafe_allow_html=True)
-    
+    st.markdown('<p class="sub-header">Automatically detects and explains vague language in construction contract documents using LLMs.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="sub-header">Made as Proof of Concept by Prakhar Agrahari (24M0631) as Part of MTP Stage 1 under the guidance of Prof. Venkata Delhi</p>', unsafe_allow_html=True)
+
+    # Sidebar (continue your code here)
     # Sidebar
     with st.sidebar:
         st.header("🔑 API Configuration")
@@ -137,7 +157,6 @@ def main():
             st.success("✅ API Key Configured")
         else:
             st.error("❌ API Key Required")
-            st.info("👉 Get your free API key from [Google AI Studio](https://makersuite.google.com/app/apikey)")
         
         st.divider()
         
@@ -155,7 +174,7 @@ def main():
         # Model selection
         model_choice = st.selectbox(
             "Select Gemini Model",
-            ["gemini-1.5-flash", "gemini-1.5-pro"],
+            ["gemini-2.5-flash", "gemini-2.5-pro"],
             help="Flash is faster, Pro is more accurate"
         )
         
