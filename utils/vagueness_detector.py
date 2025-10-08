@@ -8,7 +8,7 @@ import json
 from typing import Dict, List
 
 
-def analyze_paragraph(paragraph: str, api_key: str, model_name: str = "gemini-1.5-flash") -> Dict:
+def analyze_paragraph(paragraph: str, api_key: str, model_name: str = "gemini-2.5-flash") -> Dict:
     """
     Analyze a paragraph for vagueness using Gemini
     
@@ -89,7 +89,7 @@ If the paragraph is clear and precise with concrete details, metrics, or specifi
         }
 
 
-def analyze_sentence(sentence: str, api_key: str, context: str = "", model_name: str = "gemini-1.5-flash") -> Dict:
+def analyze_sentence(sentence: str, api_key: str, context: str = "", model_name: str = "gemini-2.5-flash") -> Dict:
     """
     Analyze a single sentence for vagueness using Gemini
     
@@ -164,7 +164,7 @@ Respond ONLY with valid JSON in this exact format:
         }
 
 
-def analyze_batch(items: List[str], api_key: str, progress_callback=None, model_name: str = "gemini-1.5-flash", use_paragraphs: bool = True) -> List[Dict]:
+def analyze_batch(items: List[str], api_key: str, progress_callback=None, model_name: str = "gemini-2.5-flash", use_paragraphs: bool = True) -> List[Dict]:
     """
     Analyze multiple items (sentences or paragraphs) in batch
     
